@@ -1,0 +1,19 @@
+name: me-1_checkin
+
+on:
+  schedule:
+    - cron: "0 0,8 * * *"
+  workflow_dispatch:
+
+jobs:
+  checkin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lentikr/me-1_checkin@main
+        with:
+          username: ${{ secrets.ME_USERNAME_DD }}
+          passwd: ${{ secrets.ME_PASSWD_DD }}
+          host: ${{ secrets.ME_HOST }}
+          login_path: ${{ secrets.ME_LOGIN_PATH }}
+          token_path: ${{ secrets.ME_TOKEN_PATH }}
+          checkin_path: ${{ secrets.ME_CHECKIN_PATH }}
